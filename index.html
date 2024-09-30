@@ -8,7 +8,7 @@
 </head>
 <body  class="container-md">
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-body-secondary">
             <div class="container-fluid">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -17,8 +17,8 @@
                 <div><a class="navbar-brand" href="#">Foodie Freak</a></div>
                 <!-- search -->
                 <div class="d-flex">
-                  <input class="me-2" type="text" placeholder="Find Your Desired Food" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <input id="search-bar" class="me-2" type="text" placeholder="Find Your Desired Food" aria-label="Search">
+                  <button onclick="searchFood()" onkeyup="Enter" class="btn btn-outline-success" type="submit">Search</button>
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
         <!-- all meals section -->
         <section class="mt-5">
             <div id="meals-container" class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
-                
+
             </div>
         </section>
     </main>

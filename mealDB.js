@@ -1,11 +1,20 @@
-const showAllMeals = (searchText='') => {
-  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`)
+const showAllMeals = (searchText = '') => {
+  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+  fetch(url)
     .then(res => res.json())
     .then(data => displayAllMeals(data.meals))
+    console.log(url);
+
 }
 const displayAllMeals = meals => {
   // console.log(meals);
   const allMealsContainer = document.getElementById('meals-container');
+  if(meals == null){
+    allMealsContainer.innerHTML = `<img src="Images/DataNotFound.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+`;
+    return;
+  }
+  allMealsContainer.innerHTML = '';
   meals.forEach(meal => {
     console.log(meal);
     const mealDiv = document.createElement('div');
@@ -22,4 +31,9 @@ const displayAllMeals = meals => {
     allMealsContainer.appendChild(mealDiv);
   });
 }
+
 showAllMeals();
+const searchFood = () => {
+  const searchText = document.getElementById('search-bar').value;
+  showAllMeals(searchText);
+}
