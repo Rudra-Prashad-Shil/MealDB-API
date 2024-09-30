@@ -3,7 +3,6 @@ const showAllMeals = (searchText = '') => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayAllMeals(data.meals))
-    console.log(url);
 
 }
 const displayAllMeals = meals => {
@@ -16,7 +15,7 @@ const displayAllMeals = meals => {
   }
   allMealsContainer.innerHTML = '';
   meals.forEach(meal => {
-    console.log(meal);
+    // console.log(meal);
     const mealDiv = document.createElement('div');
     mealDiv.classList.add('col');
     mealDiv.innerHTML = `
@@ -32,8 +31,9 @@ const displayAllMeals = meals => {
   });
 }
 
-showAllMeals();
+
 const searchFood = () => {
   const searchText = document.getElementById('search-bar').value;
   showAllMeals(searchText);
 }
+showAllMeals();
