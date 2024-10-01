@@ -3,6 +3,7 @@ const showAllMeals = (searchText = '') => {
   fetch(url)
     .then(res => res.json())
     .then(data => displayAllMeals(data.meals))
+    .catch(error => console.log(error))
 }
 const displayAllMeals = meals => {
   // console.log(meals);
@@ -45,6 +46,7 @@ const loadMealDetails = mealId =>{
   fetch(url)
   .then(res => res.json())
   .then(data => showMealDetails(data.meals[0]))
+  .catch(error => console.log(error))
 }
 const showMealDetails = (meal) =>{
   document.getElementById('mealDetailsLabel').innerText = meal.strMeal;
