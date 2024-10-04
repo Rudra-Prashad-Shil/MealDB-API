@@ -1,3 +1,4 @@
+// loading meals in home --------------------------------
 const showAllMeals = async(searchText = '') => {
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
   try{
@@ -10,6 +11,7 @@ const showAllMeals = async(searchText = '') => {
   }
 }
 
+//displaying all meals in home------------------------
 const displayAllMeals = meals => {
   // console.log(meals);
   const allMealsContainer = document.getElementById('meals-container');
@@ -27,8 +29,8 @@ const displayAllMeals = meals => {
          <img src="${meal.strMealThumb}" class="card-img-top" alt="...">
           <div class="card-body">
            <h5 class="card-title">${meal.strMeal}</h5>
-           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-           <button onclick="loadMealDetails(${meal.idMeal})" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#mealDetails">
+           <p class="card-text">Looking Delicious? see details by Clicking Below!</p>
+           <button onclick="loadMealDetails(${meal.idMeal})" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#mealDetails">
             Details
             </button>
           </div>
@@ -38,14 +40,14 @@ const displayAllMeals = meals => {
   });
 }
 
-
+//foodSearch---------------------------------------------------------
 const searchFood = () => {
   const searchText = document.getElementById('search-input-field').value;
   showAllMeals(searchText);
   document.getElementById('search-input-field').value='';
 }
 
-// MealDetails 
+// Meal Details for Modals-----------------------------------------
 const loadMealDetails = async(mealId) =>{
   const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`;
   try {
@@ -57,6 +59,7 @@ const loadMealDetails = async(mealId) =>{
     console.log(error);
   }
 }
+
 const showMealDetails = (meal) =>{
   document.getElementById('mealDetailsLabel').innerText = meal.strMeal;
   const mealBody = document.getElementById('meal-details-body');
@@ -64,6 +67,10 @@ const showMealDetails = (meal) =>{
     <img src="${meal.strMealThumb}" class="img-fluid rounded mb-2" alt="${meal.strMeal}">
     <p class="text-center">Food Catergory: <span class="fw-bold">${meal.strCategory}</span></p>
     <p class="text-center">Food Origin: <span class="fw-bold">${meal.strArea}</span></p>
+    <p><span class="fw-bold">Instructions:</span> ${meal.strInstructions}</p>
+    <a class="d-block text-center fw-bold text-decoration-none" href="${meal.strYoutube}" target="_blank">Youtube Video Link</a>
   `;
 }
+
+// default all meals Load
 showAllMeals();

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
 </head>
 
 <body>
+  <!-- nav Section -->
   <header class="container-lg">
     <nav class="navbar navbar-expand-md">
       <div class="container-fluid">
@@ -18,35 +20,40 @@
         </button>
         <div class="collapse navbar-collapse py-2" id="navbarTogglerDemo01">
           <a class="navbar-brand fw-bold me-auto text-dark" href="">FoodFreaK</a>
-          <button class="btn btn-warning py-2  text-black" type="submit">Sign Up</button>
+          <button class="btn btn-warning py-2 fw-bold" type="submit">Sign Up</button>
         </div>
       </div>
     </nav>
   </header>
 
   <!-- Banner -->
-  <div>
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="carousel-item active bg-dark">
-          <img src="Images/banner_1.png" class="d-block w-100 opacity-50" alt="...">
-          <div class="carousel-caption" style="bottom: 15%;">
-            <h1 class="fw-lighter">Taste Our Delicious Best Foods</h5>
-            <p class="fw-lighter d-none d-sm-block">Explore a variety of delicious recipes, cooking tips, and culinary inspiration. Whether you're a beginner or a pro, we make it easy to create mouth-watering dishes and elevate your kitchen game!</p>
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active bg-dark">
+        <img src="Images/banner_1.png" class="d-block w-100 opacity-50" alt="...">
+        <div class="carousel-caption" style="bottom: 15%;">
+          <h1 class="fw-lighter">Taste Our Delicious Best Foods</h5>
+            <p class="fw-lighter d-none d-sm-block">Explore a variety of delicious recipes, cooking tips, and culinary
+              inspiration. Whether you're a beginner or a pro, we make it easy to create mouth-watering dishes and
+              elevate your kitchen game!</p>
             <!-- search Section-->
             <div class="d-flex align-items-center justify-content-center">
-              <input id="search-input-field" type="text" class="w-50 border-0 rounded-start-2 bg-secondary-subtle py-2" placeholder="Find Your Desired Food">
-              <button onclick="searchFood()" class="btn btn-warning rounded-start-0 fw-bold py-2" type="submit">Search</button>
+              <input id="search-input-field" type="text" class="w-50 border-0 rounded-start-2 py-2 ps-3"
+                placeholder="Find Your Desired Food">
+              <button onclick="searchFood()" class="btn btn-warning rounded-start-0 fw-bold py-2"
+                type="submit">Search</button>
             </div>
-          </div>
         </div>
+      </div>
     </div>
   </div>
 
   <main class="container-md">
     <!-- all meals section -->
     <section class="mt-5">
-      <div id="meals-container" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+      <h1 class="text-center fw-semibold mb-4">Your Favourite Food</h1>
+
+      <div id="meals-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
 
       </div>
     </section>
@@ -63,12 +70,16 @@
 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </main>
+
+  <footer>
+    
+  </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
